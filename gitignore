@@ -1,0 +1,50 @@
+# -------- Android / Gradle --------
+# Gradle cache & build outputs
+.gradle/
+**/build/
+out/
+bin/
+gen/
+
+# Keep Gradle wrapper files tracked
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat
+
+# Local project configuration
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+
+# APK / App Bundles / outputs
+*.apk
+*.ap_
+*.aab
+/outputs/
+/captures/
+
+# NDK / CMake
+.externalNativeBuild/
+.cxx/
+obj/
+
+# Signing & secrets (do NOT commit your keys)
+*.jks
+*.keystore
+*.keystore.properties
+signing.properties
+keystore.properties
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Misc
+.navigation/
+.vscode/
