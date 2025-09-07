@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Noticias"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/ritmofit_orange"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="28dp"/>
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:id="@+id/newsContainer"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="24dp">
+            <!-- Noticias mockeadas se agregan desde el fragment -->
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

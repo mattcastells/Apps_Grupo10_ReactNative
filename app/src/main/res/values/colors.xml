@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Colores RitmoFit -->
+    <color name="ritmofit_orange">#F26A3E</color>
+    <color name="ritmofit_dark">#232323</color>
+    <color name="ritmofit_gray">#444444</color>
+    <color name="ritmofit_lightgray">#F5F5F5</color>
+    <color name="ritmofit_accent">#FF8A50</color>
 </resources>
