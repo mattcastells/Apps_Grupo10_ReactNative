@@ -8,7 +8,7 @@
         <ImageView
             android:id="@+id/profileImage"
             android:layout_width="140dp" android:layout_height="140dp"
-            android:src="@android:drawable/ic_menu_myplaces"
+            android:src="@drawable/bodybuilder"
             android:scaleType="centerCrop"
             android:background="@android:color/transparent"
             android:contentDescription="Foto de perfil"

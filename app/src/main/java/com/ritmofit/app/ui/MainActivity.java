@@ -23,7 +23,17 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         NavigationUI.setupWithNavController(bottomNav, navController);
-        bottomNav.setOnItemReselectedListener(item -> { /* no-op */ });
+        bottomNav.setOnItemReselectedListener(item -> { });
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int dest = item.getItemId();
+            if (navController.getCurrentDestination() != null && navController.getCurrentDestination().getId() == dest) {
+                return true;
+            }
+            navController.popBackStack(navController.getGraph().getStartDestinationId(), false);
+            navController.navigate(dest);
+            return true;
+        });
     }
 
     @Override

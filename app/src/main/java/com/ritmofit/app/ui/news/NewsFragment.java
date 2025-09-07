@@ -19,7 +19,7 @@ public class NewsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_news, container, false);
         LinearLayout newsContainer = view.findViewById(R.id.newsContainer);
 
-    // Mock noticias con fecha, título y cuerpo
+    // Mock noticias con fecha, título y cuerpo (Reemplazar cuando tengamos el back)
     String[][] noticias = {
         {"2025-09-07", "¡Nueva clase de Zumba!", "Sumate este viernes a las 19hs en el salón principal."},
         {"2025-09-05", "Cierre por mantenimiento", "El gimnasio permanecerá cerrado el lunes 15/9 por tareas de mantenimiento."},
@@ -60,7 +60,7 @@ public class NewsFragment extends Fragment {
     noticiaLayout.setBackgroundColor(getResources().getColor(R.color.ritmofit_lightgray));
     newsContainer.addView(noticiaLayout);
 
-    // Línea separadora (excepto después de la última noticia)
+    // Línea separadora entre noticias
     if (i < noticias.length - 1) {
         View divider = new View(getContext());
         LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(

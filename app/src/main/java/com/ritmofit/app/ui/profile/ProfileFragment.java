@@ -54,8 +54,8 @@ public class ProfileFragment extends Fragment {
         });
 
         logoutButton.setOnClickListener(v -> {
-            // Cerrar sesión (implementar lógica real)
-            Toast.makeText(getContext(), "Sesión cerrada", Toast.LENGTH_SHORT).show();
+            // Navegar a LoginFragment
+            androidx.navigation.Navigation.findNavController(view).navigate(R.id.loginFragment);
         });
 
         return view;
