@@ -15,7 +15,7 @@
             android:text="Noticias"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@color/ritmofit_orange"
+            android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="28dp"/>
