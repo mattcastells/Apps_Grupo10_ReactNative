@@ -1,4 +1,3 @@
-
 package com.ritmofit.app.ui.reservations;
 
 import android.os.Bundle;
@@ -24,23 +23,18 @@ public class ReservationsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_reservations, container, false);
 
+        Spinner classSpinner = view.findViewById(R.id.classSpinner);
+        Spinner timeSpinner = view.findViewById(R.id.timeSpinner);
+        Button bookButton = view.findViewById(R.id.bookButton);
+        LinearLayout myReservationsContainer = view.findViewById(R.id.myReservationsContainer);
+        TextView noReservationsText = view.findViewById(R.id.noReservationsText);
+        LinearLayout classInfoCard = view.findViewById(R.id.classInfoCard);
 
-    Spinner classSpinner = view.findViewById(R.id.classSpinner);
-    Spinner timeSpinner = view.findViewById(R.id.timeSpinner);
-    Button bookButton = view.findViewById(R.id.bookButton);
-    LinearLayout myReservationsContainer = view.findViewById(R.id.myReservationsContainer);
-    TextView noReservationsText = view.findViewById(R.id.noReservationsText);
-    LinearLayout classInfoLayout = new LinearLayout(getContext());
-    classInfoLayout.setOrientation(LinearLayout.VERTICAL);
-    classInfoLayout.setPadding(0, 0, 0, 16);
-    ((ViewGroup) bookButton.getParent()).addView(classInfoLayout, ((ViewGroup) bookButton.getParent()).indexOfChild(bookButton));
-
-    // Mostrar mensaje si no hay reservas
-    if (myReservationsContainer.getChildCount() == 0) {
-        noReservationsText.setVisibility(View.VISIBLE);
-    } else {
-        noReservationsText.setVisibility(View.GONE);
-    }
+        if (myReservationsContainer.getChildCount() == 0) {
+            noReservationsText.setVisibility(View.VISIBLE);
+        } else {
+            noReservationsText.setVisibility(View.GONE);
+        }
 
         // Mock de clases y horarios con info extendida
         class ClaseInfo {
@@ -72,23 +66,23 @@ public class ReservationsFragment extends Fragment {
         Runnable updateClassInfo = () -> {
             int pos = classSpinner.getSelectedItemPosition();
             ClaseInfo c = clasesInfo[pos];
-            classInfoLayout.removeAllViews();
+            classInfoCard.removeAllViews();
             TextView prof = new TextView(getContext());
             prof.setText("Profesor: " + c.profesor);
             prof.setTextSize(16);
-            classInfoLayout.addView(prof);
+            classInfoCard.addView(prof);
             TextView cupos = new TextView(getContext());
             cupos.setText("Cupos: " + c.cupos);
             cupos.setTextSize(16);
-            classInfoLayout.addView(cupos);
+            classInfoCard.addView(cupos);
             TextView dur = new TextView(getContext());
             dur.setText("Duración: " + c.duracion);
             dur.setTextSize(16);
-            classInfoLayout.addView(dur);
+            classInfoCard.addView(dur);
             TextView sede = new TextView(getContext());
             sede.setText("Sede: " + c.sede + " - " + c.ubicacion);
             sede.setTextSize(16);
-            classInfoLayout.addView(sede);
+            classInfoCard.addView(sede);
         };
         updateClassInfo.run();
 
@@ -111,15 +105,17 @@ public class ReservationsFragment extends Fragment {
                 Toast.makeText(getContext(), "Selecciona clase y horario", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getContext(), "Reserva realizada para " + clase + " el " + horario, Toast.LENGTH_LONG).show();
-                // Crear layout horizontal para reserva y botón eliminar
-                LinearLayout reservaLayout = new LinearLayout(getContext());
-                reservaLayout.setOrientation(LinearLayout.HORIZONTAL);
-                reservaLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                // Crear layout para la reserva con fondo blanco y borde naranja
+                LinearLayout card = new LinearLayout(getContext());
+                card.setOrientation(LinearLayout.HORIZONTAL);
+                card.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                card.setBackgroundResource(R.drawable.reservation_card);
+                card.setPadding(24, 18, 24, 18);
+                card.setElevation(4f);
 
                 TextView reservaView = new TextView(getContext());
                 reservaView.setText("• " + clase + " - " + horario);
                 reservaView.setTextSize(18);
-                reservaView.setPadding(0, 12, 16, 12);
                 reservaView.setLayoutParams(new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
 
                 Button deleteButton = new Button(getContext());
@@ -130,7 +126,7 @@ public class ReservationsFragment extends Fragment {
                         .setTitle("Eliminar reserva")
                         .setMessage("¿Estás seguro que deseas eliminar esta reserva?")
                         .setPositiveButton("Sí", (dialog, which) -> {
-                            myReservationsContainer.removeView(reservaLayout);
+                            myReservationsContainer.removeView(card);
                             if (myReservationsContainer.getChildCount() == 0) {
                                 noReservationsText.setVisibility(View.VISIBLE);
                             }
@@ -139,9 +135,12 @@ public class ReservationsFragment extends Fragment {
                         .show();
                 });
 
-                reservaLayout.addView(reservaView);
-                reservaLayout.addView(deleteButton);
-                myReservationsContainer.addView(reservaLayout, 0);
+                card.addView(reservaView);
+                card.addView(deleteButton);
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) card.getLayoutParams();
+                params.setMargins(0, 0, 0, 24);
+                card.setLayoutParams(params);
+                myReservationsContainer.addView(card, 0);
                 noReservationsText.setVisibility(View.GONE);
             }
         });

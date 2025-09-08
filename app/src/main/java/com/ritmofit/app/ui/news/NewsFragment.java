@@ -35,21 +35,23 @@ public class NewsFragment extends Fragment {
             LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(0, 16, 0, 16);
         noticiaLayout.setLayoutParams(params);
+        noticiaLayout.setBackgroundResource(R.drawable.news_card_bg);
+        noticiaLayout.setElevation(8f);
 
         TextView dateView = new TextView(getContext());
         dateView.setText(noticia[0]);
         dateView.setTextSize(14);
-    dateView.setTextColor(getResources().getColor(R.color.ritmofit_dark));
+        dateView.setTextColor(getResources().getColor(R.color.ritmofit_dark));
         dateView.setPadding(16, 16, 16, 4);
         noticiaLayout.addView(dateView);
 
         TextView title = new TextView(getContext());
-    title.setText(noticia[1]);
-    title.setTextSize(20);
-    title.setTypeface(null, android.graphics.Typeface.BOLD);
-    title.setPadding(16, 0, 16, 4);
-    title.setTextColor(getResources().getColor(R.color.ritmofit_orange));
-    noticiaLayout.addView(title);
+        title.setText(noticia[1]);
+        title.setTextSize(20);
+        title.setTypeface(null, android.graphics.Typeface.BOLD);
+        title.setPadding(16, 0, 16, 4);
+        title.setTextColor(getResources().getColor(R.color.ritmofit_orange));
+        noticiaLayout.addView(title);
 
         TextView body = new TextView(getContext());
         body.setText(noticia[2]);
@@ -57,19 +59,18 @@ public class NewsFragment extends Fragment {
         body.setPadding(16, 0, 16, 16);
         noticiaLayout.addView(body);
 
-    noticiaLayout.setBackgroundColor(getResources().getColor(R.color.ritmofit_lightgray));
-    newsContainer.addView(noticiaLayout);
+        newsContainer.addView(noticiaLayout);
 
-    // Línea separadora entre noticias
-    if (i < noticias.length - 1) {
-        View divider = new View(getContext());
-        LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT, 4);
-        dividerParams.setMargins(0, 0, 0, 0);
-        divider.setLayoutParams(dividerParams);
-        divider.setBackgroundColor(getResources().getColor(R.color.ritmofit_orange));
-        newsContainer.addView(divider);
-    }
+        // Línea separadora entre noticias
+        if (i < noticias.length - 1) {
+            View divider = new View(getContext());
+            LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, 4);
+            dividerParams.setMargins(0, 0, 0, 0);
+            divider.setLayoutParams(dividerParams);
+            divider.setBackgroundColor(getResources().getColor(R.color.ritmofit_orange));
+            newsContainer.addView(divider);
+        }
     }
 
         return view;

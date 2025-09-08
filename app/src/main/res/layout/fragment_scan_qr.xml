@@ -1,76 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:gravity="center" android:padding="24dp">
-
-    <TextView
-        android:id="@+id/scanQrTitle"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Escanear QR"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/ritmofit_orange"
-        android:layout_marginBottom="24dp"/>
-
-    <Button
-        android:id="@+id/scanQrButton"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Iniciar escaneo"
-        android:textSize="18sp"
-        android:backgroundTint="@color/ritmofit_orange"
-        android:textColor="@color/white"
-        android:layout_marginBottom="32dp"/>
-
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ritmofit_beige">
 
     <LinearLayout
-        android:id="@+id/checkinInfoContainer"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@color/ritmofit_lightgray"
-        android:layout_marginTop="8dp"
-        android:visibility="gone">
+        android:gravity="center"
+        android:padding="24dp">
+
         <TextView
-            android:id="@+id/checkinTitle"
+            android:id="@+id/scanQrTitle"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Datos del turno"
-            android:textSize="20sp"
+            android:text="Escanear QR"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@color/ritmofit_orange"
-            android:layout_marginBottom="8dp"/>
-        <TextView
-            android:id="@+id/checkinClass"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Clase: -"
-            android:textSize="17sp"
-            android:layout_marginBottom="4dp"/>
-        <TextView
-            android:id="@+id/checkinTime"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Horario: -"
-            android:textSize="17sp"
-            android:layout_marginBottom="4dp"/>
-        <TextView
-            android:id="@+id/checkinLocation"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="Sede: -"
-            android:textSize="17sp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="24dp"/>
+
         <Button
-            android:id="@+id/confirmCheckinButton"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="Confirmar Check-in"
+            android:id="@+id/scanQrButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Iniciar escaneo"
             android:textSize="18sp"
             android:backgroundTint="@color/ritmofit_orange"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+            android:textColor="@color/white"
+            android:layout_marginBottom="32dp"/>
 
-    <TextView
-        android:id="@+id/scanResultText"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="16sp"
-        android:textColor="@color/ritmofit_dark"
+        <LinearLayout
+            android:id="@+id/checkinInfoContainer"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/ritmofit_lightgray"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/checkinTitle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Datos del turno"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/ritmofit_orange"
+                android:layout_marginBottom="8dp"/>
+            <TextView
+                android:id="@+id/checkinClass"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Clase: -"
+                android:textSize="17sp"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/checkinTime"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Horario: -"
+                android:textSize="17sp"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/checkinLocation"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Sede: -"
+                android:textSize="17sp"
+                android:layout_marginBottom="12dp"/>
+            <Button
+                android:id="@+id/confirmCheckinButton"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Confirmar Check-in"
+                android:textSize="18sp"
+                android:backgroundTint="@color/ritmofit_orange"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/scanResultText"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="@color/ritmofit_dark"
         android:gravity="center"/>
-
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

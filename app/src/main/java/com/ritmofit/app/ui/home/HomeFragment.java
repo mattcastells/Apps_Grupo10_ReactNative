@@ -92,7 +92,8 @@ public class HomeFragment extends Fragment {
                      fechaSel.equals("Próx. Sábado") && c.fecha.equals("Próx. Sábado"))) {
                     LinearLayout card = new LinearLayout(requireContext());
                     card.setOrientation(LinearLayout.VERTICAL);
-                    card.setBackgroundColor(getResources().getColor(R.color.ritmofit_lightgray));
+                    card.setBackgroundResource(R.drawable.class_card_bg);
+                    card.setElevation(8f);
                     card.setPadding(24, 20, 24, 20);
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);

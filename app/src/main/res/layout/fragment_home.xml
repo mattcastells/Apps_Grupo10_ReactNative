@@ -3,7 +3,9 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:padding="24dp" android:gravity="center_horizontal">
+        android:padding="24dp" android:gravity="center_horizontal"
+        android:background="@color/ritmofit_beige"
+        android:paddingBottom="80dp">
 
         <ImageView
             android:id="@+id/logoImageView"
@@ -70,7 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@drawable/spinner_bg"
+            android:background="@drawable/class_card_bg"
+            android:elevation="8dp"
             android:padding="16dp"
             android:gravity="center_vertical"
             android:layout_marginTop="36dp"
