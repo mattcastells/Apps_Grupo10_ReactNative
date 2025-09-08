@@ -21,7 +21,7 @@ import com.ritmofit.app.R;
 public class ProfileFragment extends Fragment {
     private static final int PICK_IMAGE = 1;
     private ImageView profileImage;
-    private EditText nameEditText, emailEditText, roleEditText;
+    private EditText nameEditText, emailEditText;
     private Button saveButton, logoutButton, changePhotoButton;
 
     @Nullable
@@ -33,7 +33,6 @@ public class ProfileFragment extends Fragment {
         profileImage = view.findViewById(R.id.profileImage);
         nameEditText = view.findViewById(R.id.nameEditText);
         emailEditText = view.findViewById(R.id.emailEditText);
-        roleEditText = view.findViewById(R.id.roleEditText);
         saveButton = view.findViewById(R.id.saveButton);
         logoutButton = view.findViewById(R.id.logoutButton);
         changePhotoButton = view.findViewById(R.id.changePhotoButton);
@@ -41,7 +40,6 @@ public class ProfileFragment extends Fragment {
         // Demo: set default values
         nameEditText.setText("Nombre Apellido");
         emailEditText.setText("usuario@email.com");
-        roleEditText.setText("Usuario");
 
         changePhotoButton.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

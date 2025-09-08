@@ -13,11 +13,23 @@
 
         <TextView
             android:id="@+id/scanQrTitle"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Escanear QR"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/ritmofit_orange"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:id="@+id/scanQrSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usá el escáner para ingresar al gimnasio con tu QR personal."
+            android:textSize="16sp"
+            android:textColor="@color/ritmofit_dark"
+            android:gravity="center"
             android:layout_marginBottom="24dp"/>
 
         <Button
