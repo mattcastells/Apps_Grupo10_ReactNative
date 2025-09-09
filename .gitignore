@@ -1,15 +1,65 @@
+# Android Studio / IntelliJ
 *.iml
-.gradle
-/local.properties
+.idea/
+*.iml
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
+/.idea/
+
+# Gradle cache & build outputs
+.gradle/
+**/build/
+out/
+bin/
+gen/
+.gradle
 /build
 /captures
 .externalNativeBuild
 .cxx
+
+# Keep Gradle wrapper files tracked
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat
+
+# Local project configuration
 local.properties
+/local.properties
+
+# APK / App Bundles / outputs
+*.apk
+*.ap_
+*.aab
+/outputs/
+/captures/
+
+
+# NDK / CMake
+.externalNativeBuild/
+.cxx/
+obj/
+
+
+# Signing & secrets (do NOT commit your keys)
+*.jks
+*.keystore
+*.keystore.properties
+signing.properties
+keystore.properties
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Misc
+.navigation/
+.vscode/
