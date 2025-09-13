@@ -40,4 +40,13 @@
         android:id="@+id/profileFragment"
         android:name="com.ritmofit.app.ui.profile.ProfileFragment"
         android:label="Perfil" />
+
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.ritmofit.app.ui.createuser.CreateUserFragment"
+        android:label="Crear usuario" />
+    <fragment
+        android:id="@+id/editUserFragment"
+        android:name="com.ritmofit.app.ui.edituser.EditUserFragment"
+        android:label="Editar información" />
 </navigation>

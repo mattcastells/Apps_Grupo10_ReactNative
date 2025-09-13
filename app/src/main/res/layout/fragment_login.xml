@@ -67,6 +67,16 @@
             android:textStyle="bold"
             android:layout_marginBottom="18dp"/>
 
+        <Button
+            android:id="@+id/createUserButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear usuario"
+            android:textSize="17sp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@color/white"
+            android:layout_marginBottom="18dp"/>
+
         <TextView
             android:id="@+id/loginError"
             android:layout_width="match_parent"

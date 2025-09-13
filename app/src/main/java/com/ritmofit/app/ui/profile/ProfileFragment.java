@@ -22,7 +22,7 @@ public class ProfileFragment extends Fragment {
     private static final int PICK_IMAGE = 1;
     private ImageView profileImage;
     private EditText nameEditText, emailEditText;
-    private Button saveButton, logoutButton, changePhotoButton;
+    private Button saveButton, logoutButton, changePhotoButton, editInfoButton;
 
     @Nullable
     @Override
@@ -33,9 +33,13 @@ public class ProfileFragment extends Fragment {
         profileImage = view.findViewById(R.id.profileImage);
         nameEditText = view.findViewById(R.id.nameEditText);
         emailEditText = view.findViewById(R.id.emailEditText);
-        saveButton = view.findViewById(R.id.saveButton);
-        logoutButton = view.findViewById(R.id.logoutButton);
-        changePhotoButton = view.findViewById(R.id.changePhotoButton);
+    saveButton = view.findViewById(R.id.saveButton);
+    logoutButton = view.findViewById(R.id.logoutButton);
+    changePhotoButton = view.findViewById(R.id.changePhotoButton);
+    editInfoButton = view.findViewById(R.id.editInfoButton);
+        editInfoButton.setOnClickListener(v -> {
+            androidx.navigation.Navigation.findNavController(view).navigate(R.id.editUserFragment);
+        });
 
         // Demo: set default values
         nameEditText.setText("Nombre Apellido");

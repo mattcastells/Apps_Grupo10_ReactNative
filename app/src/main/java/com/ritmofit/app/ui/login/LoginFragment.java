@@ -26,6 +26,12 @@ public class LoginFragment extends Fragment {
         TextView errorText = view.findViewById(R.id.loginError);
         TextView forgotPass = view.findViewById(R.id.forgotPassword);
 
+        Button createUserBtn = view.findViewById(R.id.createUserButton);
+
+        createUserBtn.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.createUserFragment);
+        });
+
         loginBtn.setOnClickListener(v -> {
             String email = emailEdit.getText().toString().trim();
             String pass = passEdit.getText().toString();
